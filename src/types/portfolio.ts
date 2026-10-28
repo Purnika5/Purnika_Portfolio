@@ -18,7 +18,7 @@ export interface Project {
   category: 'ai-ml' | 'backend-systems';
   description: string;
   fullDescription: string;
-  image: string;
+  image?: string;
   tags: string[];
   githubUrl?: string;
   paperUrl?: string;
@@ -49,6 +49,18 @@ export interface ExperienceItem {
   id: string;
   role: string;
   organization: string;
+  location?: string;
+  period: string;
+  badge: string;
+  badgeColor?: string;
+  description: string;
+  points: string[];
+}
+
+export interface EducationItem {
+  id: string;
+  degree: string;
+  institution: string;
   location?: string;
   period: string;
   badge: string;

@@ -1,3 +1,4 @@
+import React from 'react';
 import { 
   Trophy, 
   Award, 
@@ -8,7 +9,6 @@ import {
   ArrowUpRight 
 } from 'lucide-react';
 import { ACHIEVEMENTS } from '../data/portfolioData';
-import { triggerAchievementConfetti } from '../utils/confetti';
 
 export const Achievements: React.FC = () => {
   const getCategoryIcon = (category: string) => {
@@ -56,8 +56,7 @@ export const Achievements: React.FC = () => {
             return (
               <div
                 key={item.id}
-                onClick={triggerAchievementConfetti}
-                className="group relative p-6 sm:p-8 rounded-2xl glass-panel-interactive border border-purple-500/20 hover:border-purple-400/40 flex flex-col justify-between space-y-6 cursor-pointer"
+                className="group relative p-6 sm:p-8 rounded-2xl glass-panel-interactive border border-purple-500/20 hover:border-purple-400/40 flex flex-col justify-between space-y-6 shadow-xl"
               >
                 {/* Header Row */}
                 <div className="flex items-start justify-between gap-4">
@@ -105,26 +104,18 @@ export const Achievements: React.FC = () => {
                   ))}
                 </div>
 
-                {/* Link / Verification Footer */}
-                {item.link ? (
-                  <div className="pt-2 flex items-center justify-between text-xs">
-                    <span className="text-[11px] text-purple-400/80 font-mono">
-                      Click card to celebrate 🎉
-                    </span>
+                {/* Optional External Link Footer without celebrate prompts */}
+                {item.link && (
+                  <div className="pt-2 flex items-center justify-end text-xs">
                     <a
                       href={item.link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-purple-300 hover:text-white border border-white/10 transition-colors font-semibold"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-purple-300 hover:text-white border border-white/10 transition-colors font-semibold text-xs"
                     >
                       <span>{item.link.text}</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </a>
-                  </div>
-                ) : (
-                  <div className="pt-1 text-[11px] text-purple-400/80 font-mono">
-                    Verified milestone • Click card to celebrate 🎉
                   </div>
                 )}
               </div>

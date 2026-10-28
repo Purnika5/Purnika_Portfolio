@@ -2,6 +2,7 @@ import type {
   Project, 
   SkillGroup, 
   ExperienceItem, 
+  EducationItem,
   AchievementItem, 
   CertificationItem 
 } from '../types/portfolio';
@@ -365,11 +366,14 @@ export const EXPERIENCES: ExperienceItem[] = [
       'Architected a Personally Identifiable Information (PII) masking pipeline protecting 4 sensitive data categories using stable cryptographic placeholders',
       'Implemented RAG using text embeddings and vector retrieval for evidence-backed regulatory section analysis with 95%+ audit trail coverage'
     ]
-  },
+  }
+];
+
+export const EDUCATION: EducationItem[] = [
   {
     id: 'srm-education',
-    role: 'B.Tech in Computer Science and Engineering',
-    organization: 'SRM Institute of Science and Technology',
+    degree: 'B.Tech in Computer Science and Engineering',
+    institution: 'SRM Institute of Science and Technology',
     location: 'Chennai, India',
     period: '2023 – 2027 (Expected)',
     badge: '8.28 CGPA',
@@ -384,8 +388,8 @@ export const EXPERIENCES: ExperienceItem[] = [
   },
   {
     id: 'intermediate-education',
-    role: 'Higher Secondary Education (MPC)',
-    organization: 'Sasi Junior College | Board of Intermediate Education',
+    degree: 'Higher Secondary Education (MPC)',
+    institution: 'Sasi Junior College | Board of Intermediate Education',
     location: 'Andhra Pradesh, India',
     period: '2021 – 2023',
     badge: '87% Score',
@@ -398,8 +402,8 @@ export const EXPERIENCES: ExperienceItem[] = [
   },
   {
     id: 'school-education',
-    role: 'Secondary School Certificate (SSC)',
-    organization: 'Narayana English Medium School | Board of Secondary Education',
+    degree: 'Secondary School Certificate (SSC)',
+    institution: 'Narayana English Medium School | Board of Secondary Education',
     location: 'Andhra Pradesh, India',
     period: '2020 – 2021',
     badge: '97% Score',

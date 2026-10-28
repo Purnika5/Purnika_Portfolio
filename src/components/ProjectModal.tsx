@@ -88,26 +88,24 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         {/* Scrollable Body */}
         <div className="overflow-y-auto p-6 space-y-6">
           
-          {/* Hero Banner / Screenshot */}
-          <div className="relative rounded-xl overflow-hidden border border-purple-500/30 aspect-video max-h-[340px] shadow-lg">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0c081e] via-transparent to-transparent opacity-90" />
-            <div className="absolute bottom-4 left-4 right-4">
-              <p className="text-xs font-mono text-purple-300">{project.subtitle}</p>
-              <div className="flex flex-wrap gap-1.5 mt-2">
-                {project.tags.map((tag, tIdx) => (
-                  <span
-                    key={tIdx}
-                    className="px-2 py-0.5 rounded-md text-[11px] font-mono bg-purple-950/80 border border-purple-500/40 text-purple-200 backdrop-blur-md"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
+          {/* Project Overview Card (Clean, image-free engineering presentation) */}
+          <div className="p-5 rounded-xl bg-gradient-to-r from-purple-950/40 via-[#150f33] to-[#0d0922] border border-purple-500/30 space-y-3 shadow-md">
+            <div className="flex items-center gap-2 text-xs font-mono text-purple-300">
+              <Sparkles className="w-4 h-4 text-purple-400" />
+              <span>{project.subtitle}</span>
+            </div>
+            <p className="text-sm text-slate-200 leading-relaxed font-medium">
+              {project.description}
+            </p>
+            <div className="flex flex-wrap gap-1.5 pt-1">
+              {project.tags.map((tag, tIdx) => (
+                <span
+                  key={tIdx}
+                  className="px-2.5 py-0.5 rounded-md text-[11px] font-mono bg-purple-950/80 border border-purple-500/40 text-purple-200"
+                >
+                  {tag}
+                </span>
+              ))}
             </div>
           </div>
 
